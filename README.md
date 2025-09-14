@@ -132,4 +132,4 @@ Example predictions on test dataset:
 | **[ResNet50_Weights.IMAGENET1K_V2](https://docs.pytorch.org/vision/main/models/generated/torchvision.models.resnet50.html#torchvision.models.ResNet50_Weights)** | **CNN** | **1.0000** | **1.0000** | **1.0000** | **1.0000** | **93 sec.** | **98 MB** | **4.1** | **5.0** |
 | [Swin_V2_T_Weights.IMAGENET1K_V1](https://docs.pytorch.org/vision/main/models/generated/torchvision.models.swin_v2_t.html#torchvision.models.Swin_V2_T_Weights) | Transformer | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 169 sec. | 45 MB | 15.0 | 10.0 |
 
-Download link for the best model: [models/best_resnet50_dirtiness_classification.pth](models/best_resnet50_dirtiness_classification.pth)
+Download link for the best model: [best_resnet50_dirtiness_classification.pth (HF)](https://huggingface.co/silvermete0r/best_resnet50_dirtiness_classification/blob/main/resnet50_car_dirtiness.pth)
