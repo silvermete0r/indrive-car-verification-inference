@@ -5,6 +5,8 @@ Diagram ~ Architecture:
 
 ## 1. **Damages Detection**:
 
+Main working / training notebook: [notebooks/Multi_label_Car_damages_detection_based_on_YOLOv11.ipynb](notebooks/Multi_label_Car_damages_detection_based_on_YOLOv11.ipynb)
+
 1.1. Comparing **Instance Segmentation** and **Object Detection** models for damage detection on car images (models were trained on [Roboflow](https://roboflow.com/) platform):
 
 | Model | Method | mAP50 | Precision | Recall | Train Time | Dataset Size | Dataset |
@@ -86,7 +88,7 @@ lr/pg2:                 0.000025
 
 **Best mAP@50 = 0.673 at epoch 85**
 
-**Best Model: [models/best.pt](models/besty11_car_demage_detection.pt)**
+**Best Model: [models/besty11.pt](models/besty11_car_demage_detection.pt)**
 
 ![assets/results.png](assets/results.png)
 
@@ -99,6 +101,10 @@ lr/pg2:                 0.000025
 ![assets/BoxR_curve.png](assets/BoxR_curve.png)
 
 ![assets/BoxPR_curve.png](assets/BoxPR_curve.png)
+
+Example predictions on test dataset:
+
+![assets/train_batch25920.jpg](assets/train_batch25920.jpg)
 
 
 ## 2. **Dirtiness Classification**:

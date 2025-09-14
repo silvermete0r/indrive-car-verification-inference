@@ -1,0 +1,4 @@
+streamlit>=1.49.1
+ultralytics>=8.3.199
+torch
+torchvision
