@@ -3,7 +3,7 @@ from ultralytics import YOLO
 import torch
 import torchvision 
 import PIL.Image
-import torchvision.models as models  
+import torchvision.models as models
 
 st.set_page_config(
     page_title="inDrive Car Verification System Demo",

@@ -208,3 +208,11 @@ The following table summarizes the classification results on the test set, combi
    - High precision for clean cars (1.00), indicating very few false positives.
 - **Limitations:**
    - Dataset size: 100 images (50 clean / 50 dirty-damaged);
+
+![assets/streamlit-ui.png](assets/streamlit-ui.png)
+
+![assets/deformation-example.png](assets/deformation-example.png)
+
+![assets/fastapi-service.png](assets/fastapi-service.png)
+
+![assets/fastapi-service-result.png](assets/fastapi-service-result.png)
