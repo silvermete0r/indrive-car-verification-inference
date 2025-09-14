@@ -1,4 +1,8 @@
-streamlit>=1.49.1
-ultralytics>=8.3.199
+streamlit
+ultralytics
 torch
 torchvision
+fastapi
+uvicorn
+fastapi[standard]
+scikit-learn

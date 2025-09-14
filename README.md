@@ -133,3 +133,34 @@ Example predictions on test dataset:
 | [Swin_V2_T_Weights.IMAGENET1K_V1](https://docs.pytorch.org/vision/main/models/generated/torchvision.models.swin_v2_t.html#torchvision.models.Swin_V2_T_Weights) | Transformer | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 169 sec. | 45 MB | 15.0 | 10.0 |
 
 Download link for the best model: [best_resnet50_dirtiness_classification.pth (HF)](https://huggingface.co/silvermete0r/best_resnet50_dirtiness_classification/blob/main/resnet50_car_dirtiness.pth)
+
+## 3. Final Results
+
+### 3. Final Results
+
+#### Combined Dirtiness & Damage Classification Performance
+
+The following table summarizes the classification results on the test set, combining both dirtiness and damage detection:
+
+|                | Predicted Dirty/Damaged | Predicted Clean |
+|----------------|------------------------|-----------------|
+| **Actual Dirty/Damaged** | 50                     | 0               |
+| **Actual Clean**         | 8                      | 42              |
+
+**Classification Report:**
+
+| Class            | Precision | Recall | F1-Score | Support |
+|------------------|-----------|--------|----------|---------|
+| Dirty/Damaged    | 0.86      | 1.00   | 0.93     | 50      |
+| Clean            | 1.00      | 0.84   | 0.91     | 50      |
+| **Accuracy**     |           |        | **0.92** | **100** |
+| Macro Avg        | 0.93      | 0.92   | 0.92     | 100     |
+| Weighted Avg     | 0.93      | 0.92   | 0.92     | 100     |
+
+- **Accuracy:** 92%
+- **Key Insights:**
+   - The model perfectly identifies all dirty/damaged cars (recall = 1.00).
+   - 8 clean cars were misclassified as dirty/damaged.
+   - High precision for clean cars (1.00), indicating very few false positives.
+- **Limitations:**
+   - Dataset size: 100 images (50 clean / 50 dirty-damaged);
