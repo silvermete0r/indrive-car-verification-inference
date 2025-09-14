@@ -1,7 +1,53 @@
 # InDrive Car Verification Service (Dirtiness Classification & Damages Detection)
 
+## Overview
+
 Diagram ~ Architecture:
 ![assets/indrive-car-verification-system-cv-drawio.png](assets/indrive-car-verification-system-cv-drawio.png)
+
+### Local run mini-guide
+
+1. Create Virtual Environment
+```
+python -m venv .venv
+
+.venv\Scripts\activate (for Windows)
+
+source .venv/bin/activate (for MacOS or Linux)
+```
+
+2. Install requirements:
+```
+pip install -r requirements.txt
+```
+
+3. Download ResNet50 model from this HF link and put it in `models/` folder.
+[https://huggingface.co/silvermete0r/best_resnet50_dirtiness_classification/blob/main/resnet50_car_dirtiness.pth](https://huggingface.co/silvermete0r/best_resnet50_dirtiness_classification/blob/main/resnet50_car_dirtiness.pth)
+
+4. Run Streamlit (for GUI inference)
+```
+cd streamlit-gui
+
+streamlit run app.py
+```
+
+5. Run FastAPI (for API inference)
+```
+fastapi dev app.py
+```
+then, open http://127.0.0.1:8000/docs
+
+### Docker mini-guide
+
+1. Build the Docker image:
+```
+docker build -t fastapi-app .
+```
+
+2. Run the Docker container:
+```
+docker run -p 8000:8000 fastapi-app
+```
 
 ## 1. **Damages Detection**:
 
