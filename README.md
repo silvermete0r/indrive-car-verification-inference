@@ -50,6 +50,8 @@ Diagram ~ Architecture:
     - Damages are annotated in YOLOv11 format.
     - Dataset is available on [Roboflow](https://universe.roboflow.com/computer-vision-projects-w1m15/multi-label-car-damage-detection-hfvtf/dataset/2)
 
+![assets/labels.jpg](assets/labels.jpg)
+
 1.4. YOLO11s model training parameters:
  - Epochs: 100
  - Batch size: 16
@@ -57,7 +59,46 @@ Diagram ~ Architecture:
  - Device: CUDA (Tesla T4 ~ Google Colab)
  - Pre-trained weights: [yolov11s.pt](https://docs.ultralytics.com/ru/models/yolo11/)
 
-1.5. 
+### 1.5. Model Results
+
+```text
+epoch:                  99
+epochs trained:         100
+total training time:    9667.58 s (2h 41m)
+
+train/box_loss:         0.8988
+train/cls_loss:         0.6274
+train/dfl_loss:         1.2478
+
+metrics/precision(B):   0.7753
+metrics/recall(B):      0.5866
+metrics/mAP50(B):       0.6621
+metrics/mAP50-95(B):    0.4286
+
+val/box_loss:           1.3350
+val/cls_loss:           0.9875
+val/dfl_loss:           1.6800
+
+lr/pg0:                 0.000025
+lr/pg1:                 0.000025
+lr/pg2:                 0.000025
+```
+
+**Best mAP@50 = 0.673 at epoch 85**
+
+**Best Model: [models/best.pt](models/besty11_car_demage_detection.pt)**
+
+![assets/results.png](assets/results.png)
+
+![assets/confusion_matrix_normalized.png](assets/confusion_matrix_normalized.png)
+
+![assets/BoxF1_curve.png](assets/BoxF1_curve.png)
+
+![assets/BoxP_curve.png](assets/BoxP_curve.png)
+
+![assets/BoxR_curve.png](assets/BoxR_curve.png)
+
+![assets/BoxPR_curve.png](assets/BoxPR_curve.png)
 
 
 ## 2. **Dirtiness Classification**:
