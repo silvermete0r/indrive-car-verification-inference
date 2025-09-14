@@ -3,7 +3,7 @@
 Diagram ~ Architecture:
 []()
 
-1. **Damages Detection**:
+## 1. **Damages Detection**:
 
 1.1. Comparing **Instance Segmentation** and **Object Detection** models for damage detection on car images (models were trained on [Roboflow](https://roboflow.com/) platform):
 
@@ -57,3 +57,19 @@ Diagram ~ Architecture:
  - Device: CUDA (Tesla T4 ~ Google Colab)
  - Pre-trained weights: [yolov11s.pt](https://docs.ultralytics.com/ru/models/yolo11/)
 
+1.5. 
+
+
+## 2. **Dirtiness Classification**:
+
+2.1. Dataset for Dirtiness Classification:
+ - 3 main labels (manually collected and annotated):
+    - clean (300 images)
+    - dirty (300 images)
+ - Main source: [Stanford Cars Dataset](https://www.kaggle.com/datasets/eduardo4jesus/stanford-cars-dataset)
+
+2.2. Comparing **Image Classification** pre-trained models for dirtiness classification on car images (models were trained on this [Kaggle Notebook](https://www.kaggle.com/code/armanzhalgasbayev/car-dirtiness-classification)):
+
+| Model | Type | Accuracy | Precision | Recall | F1-Score | Train Time |
+|-------|------|----------|-----------|--------|----------|------------|
+| 
