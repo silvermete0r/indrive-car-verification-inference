@@ -182,8 +182,6 @@ Download link for the best model: [best_resnet50_dirtiness_classification.pth (H
 
 ## 3. Final Results
 
-### 3. Final Results
-
 #### Combined Dirtiness & Damage Classification Performance
 
 The following table summarizes the classification results on the test set, combining both dirtiness and damage detection:
