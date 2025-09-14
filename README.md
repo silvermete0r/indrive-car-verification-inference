@@ -1,7 +1,7 @@
 # InDrive Car Verification Service (Dirtiness Classification & Damages Detection)
 
 Diagram ~ Architecture:
-[]()
+![assets/indrive-car-verification-system-cv-drawio.png](assets/indrive-car-verification-system-cv-drawio.png)
 
 ## 1. **Damages Detection**:
 
@@ -110,13 +110,26 @@ Example predictions on test dataset:
 ## 2. **Dirtiness Classification**:
 
 2.1. Dataset for Dirtiness Classification:
- - 3 main labels (manually collected and annotated):
-    - clean (300 images)
-    - dirty (300 images)
+ - 2 main labels (manually collected and annotated):
+    - clean (200 images)
+    - dirty (200 images)
  - Main source: [Stanford Cars Dataset](https://www.kaggle.com/datasets/eduardo4jesus/stanford-cars-dataset)
+ - Dataset split: 76% train (305), 13% validation (50), 11% test (45)
+ - The following pre-processing was applied to each image:
+    - Auto-orientation of pixel data (with EXIF-orientation stripping)
+    - Resize to 512x512 (Stretch)
+ - The following augmentation was applied to create 3 versions of each source image:
+    - Equal probability of one of the following 90-degree rotations: none, clockwise, counter-clockwise
+    - Randomly crop between 0 and 20 percent of the image
+    - Random brightness adjustment of between -15 and +15 percent
+ - Total pre-processed and augmented dataset size: **1010 images**
+ - Dataset link: [car-dirtiness-zl2ya](https://universe.roboflow.com/test-8a3qo/car-dirtiness-zl2ya/)
 
-2.2. Comparing **Image Classification** pre-trained models for dirtiness classification on car images (models were trained on this [Kaggle Notebook](https://www.kaggle.com/code/armanzhalgasbayev/car-dirtiness-classification)):
+2.2. Comparing **Image Classification** pre-trained models: (Visual Transformer vs. CNN) for dirtiness classification on car images (models were trained on this [Kaggle Notebook](https://www.kaggle.com/code/armanzhalgasbayev/car-dirtiness-classification)):
 
-| Model | Type | Accuracy | Precision | Recall | F1-Score | Train Time |
-|-------|------|----------|-----------|--------|----------|------------|
-| 
+| Model | Type | Accuracy | Precision | Recall | F1-Score | Train Time | File Size | GFLOPs | Inference Time (CPU ms) |
+|-------|------|----------|-----------|--------|----------|------------|--------------|--------|--------------------------|
+| **[ResNet50_Weights.IMAGENET1K_V2](https://docs.pytorch.org/vision/main/models/generated/torchvision.models.resnet50.html#torchvision.models.ResNet50_Weights)** | **CNN** | **1.0000** | **1.0000** | **1.0000** | **1.0000** | **93 sec.** | **98 MB** | **4.1** | **5.0** |
+| [Swin_V2_T_Weights.IMAGENET1K_V1](https://docs.pytorch.org/vision/main/models/generated/torchvision.models.swin_v2_t.html#torchvision.models.Swin_V2_T_Weights) | Transformer | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 169 sec. | 45 MB | 15.0 | 10.0 |
+
+Download link for the best model: [models/best_resnet50_dirtiness_classification.pth](models/best_resnet50_dirtiness_classification.pth)
